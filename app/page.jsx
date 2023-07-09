@@ -1,7 +1,20 @@
-const HomePage = () => {
+'use client'
+
+import { useEffect } from "react"
+
+const Home = () => {
+
+  useEffect(() => {
+    fetch('https://fakestoreapi.com/products')
+      .then(res => res.json())
+      .then(json => console.log(json))
+  }, [])
+
   return (
-    <div>HomePage</div>
+    <div>
+      <h1>Home</h1>
+    </div>
   )
 }
 
-export default HomePage
+export default Home
