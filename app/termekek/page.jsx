@@ -2,7 +2,7 @@
 
 import { useEffect } from "react"
 import { useDispatch, useSelector } from "react-redux"
-import { getProducts } from "../redux/features/products/productActions"
+import { getProducts } from '@app/redux/features/products/productsAction'
 
 import Product from "@components/Product"
 
@@ -10,10 +10,8 @@ const ProductsPage = () => {
   const dispatch = useDispatch()
   const products = useSelector(state => state.products.products)
 
-  console.log('products', products)
-
   useEffect(() => {
-    dispatch(getProducts('https://fakestoreapi.com/products'))
+    dispatch(getProducts())
   }, [dispatch])
 
   return (

@@ -2,7 +2,7 @@
 
 import { useEffect } from 'react'
 import { useDispatch, useSelector } from "react-redux"
-import { getProduct } from '@app/redux/features/products/productActions'
+import { getProduct } from '@app/redux/features/product/productAction'
 
 import Product from '@components/Product'
 import Link from 'next/link'
@@ -13,21 +13,19 @@ egy gomb, amivel az adott terméket a kosárba tudod rakni.
 
 const ProductPage = ({ params }) => {
   const dispatch = useDispatch()
-  const products = useSelector(state => state.products.products)
-
-  console.log('product', products)
+  const product = useSelector(state => state.product.product)
 
   useEffect(() => {
-    dispatch(getProduct(`https://fakestoreapi.com/products/${params.id}`))
-  }, [dispatch])
+    if (params.id) { dispatch(getProduct(`https://fakestoreapi.com/products/${params.id}`)) }
+  }, [dispatch, params])
 
-  console.log(products && products)
+  //console.log(product && product)
   return (
     <div>
       <h1>ProductPage</h1>
 
       <div className="products">
-        <Product key={products.id} product={products} isShow={true} />
+        <Product key={product.id} product={product} isShow={true} />
       </div>
 
       <button>Kosárba adás</button>
