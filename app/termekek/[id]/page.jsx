@@ -21,9 +21,7 @@ const ProductPage = ({ params }) => {
   }
 
   return (
-    <div>
-      <h1>ProductPage</h1>
-
+    <div className='product-page'>
       {product.id && <>
         <div className='products'>
           <Product key={product.id} product={product} isShow={true} />

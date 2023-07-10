@@ -1,0 +1,55 @@
+@use 'variables' as *;
+
+.products-page {
+  margin-top: calc($header-h + 40px);
+
+  p {
+    text-align: center;
+
+    &#text {
+      margin-bottom: 38px;
+    }
+  }
+
+  .products {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+
+    .product-list {
+      width: 100%;
+      max-width: 300px;
+      margin: 20px 10px;
+      padding: 30px;
+      border: 1px $dark solid;
+      border-radius: 20px;
+
+      .image {
+        margin: 20px auto;
+      }
+
+      p {
+        font-size: 16px;
+
+        &#title {
+          font-size: 20px;
+        }
+
+        &#price {
+          margin-top: 10px;
+        }
+      }
+
+      .link:link,
+      .link:visited,
+      .link:active {
+        color: $text-color;
+      }
+
+      .link:hover {
+        color: $hover-color;
+      }
+    }
+  }
+
+}

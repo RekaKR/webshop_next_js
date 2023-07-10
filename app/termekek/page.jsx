@@ -15,8 +15,8 @@ const ProductsPage = () => {
   }, [dispatch])
 
   return (
-    <div>
-      <h1>ProductsPage</h1>
+    <div className='products-page'>
+      <p id='text'>Böngéssz a termékek között!</p>
 
       <div className='products'>
         {products && products.map(product =>

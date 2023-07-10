@@ -1,0 +1,43 @@
+@use 'variables' as *;
+
+nav {
+  width: 100%;
+  height: $header-h;
+  background-color: $bacground-color;
+  border-bottom: 1px $dark solid;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+
+  @media (max-width: 600px) {
+    flex-wrap: wrap;
+  }
+
+  .logo {
+    display: block;
+    margin-left: 20px;
+    flex: none;
+  }
+
+  .container {
+    display: flex;
+
+    .link:link,
+    .link:visited,
+    .link:active {
+      color: $text-color;
+
+      &:hover {
+        color: $hover-color;
+      }
+    }
+
+    &>* {
+      margin-left: 80px;
+    }
+  }
+}
