@@ -7,10 +7,6 @@ import { getProduct } from '@app/redux/features/product/productAction'
 import Product from '@components/Product'
 import Link from 'next/link'
 
-/*
-egy gomb, amivel az adott terméket a kosárba tudod rakni.
-*/
-
 const ProductPage = ({ params }) => {
   const dispatch = useDispatch()
   const product = useSelector(state => state.product.product)
@@ -19,20 +15,24 @@ const ProductPage = ({ params }) => {
     if (params.id) { dispatch(getProduct(`https://fakestoreapi.com/products/${params.id}`)) }
   }, [dispatch, params])
 
-  //console.log(product && product)
+  const addToCart = () => {
+    dispatch(add(product));
+  }
+
   return (
     <div>
       <h1>ProductPage</h1>
+      {product.id && <>
+        <div className="products">
+          <Product key={product.id} product={product} isShow={true} />
+        </div>
 
-      <div className="products">
-        <Product key={product.id} product={product} isShow={true} />
-      </div>
+        <button onClick={addToCart}>Kosárba adás</button>
 
-      <button>Kosárba adás</button>
-
-      <Link href="/termekek">
-        <button>Vissza</button>
-      </Link>
+        <Link href="/termekek">
+          <button>Vissza</button>
+        </Link>
+      </>}
     </div>
   )
 }
