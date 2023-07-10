@@ -1,16 +1,13 @@
 'use client'
 
-import { useState } from 'react'
-/*
-eltárolni benne a termékeket
-*/
+import { useSelector } from 'react-redux'
 
 const Cart = () => {
-  const [cartItems, setCartItems] = useState([])
+  const cart = useSelector(state => state.cart.items)
 
   return (
     <div>
-      <p>Kosár: 10 {/*{cartItems.length()}*/} termék</p>
+      <p>Kosár: {cart?.length} termék</p>
     </div>
   )
 }

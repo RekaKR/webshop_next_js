@@ -1,10 +1,10 @@
 'use client'
 
-import { useEffect } from "react"
-import { useDispatch, useSelector } from "react-redux"
+import { useEffect } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
 import { getProducts } from '@app/redux/features/products/productsAction'
 
-import Product from "@components/Product"
+import Product from '@components/Product'
 
 const ProductsPage = () => {
   const dispatch = useDispatch()
@@ -17,8 +17,11 @@ const ProductsPage = () => {
   return (
     <div>
       <h1>ProductsPage</h1>
-      <div className="products">
-        {products && products.map(product => <Product key={product.id} product={product} isShow={false} />)}
+
+      <div className='products'>
+        {products && products.map(product =>
+          <Product key={product.id} product={product} isShow={false} />
+        )}
       </div>
     </div>
   )

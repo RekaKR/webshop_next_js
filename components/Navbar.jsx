@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import Image from 'next/image'
+
 import Cart from './Cart'
 
 const Navbar = () => {
@@ -12,15 +13,15 @@ const Navbar = () => {
       </Link>
 
       <div className='container'>
+        <Link href='/termekek'>
+          Termékek
+        </Link>
+
         <div>
           {isLoggedIn
             ? <div>:)</div>
             : <div>:(</div>}
         </div>
-
-        <Link href='/termekek'>
-          Termékek
-        </Link>
 
         <Cart />
       </div>

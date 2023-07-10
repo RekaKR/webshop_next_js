@@ -1,5 +1,6 @@
 import '@styles/css/style.css'
 import { ReduxProvider } from './redux/provider'
+
 import Navbar from '@components/Navbar'
 
 export const metadata = {

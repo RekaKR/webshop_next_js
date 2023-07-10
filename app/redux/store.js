@@ -1,6 +1,6 @@
 'use client'
 
-import { configureStore } from "@reduxjs/toolkit"
+import { configureStore } from '@reduxjs/toolkit'
 import productsReducer from './features/products/productsSlice'
 import productReducer from './features/product/productSlice'
 import cartReducer from './features/cart/cartSlice'

@@ -1,6 +1,6 @@
 'use client'
 
-import { createSlice } from "@reduxjs/toolkit"
+import { createSlice } from '@reduxjs/toolkit'
 
 const initialState = {
   products: [],
@@ -12,15 +12,15 @@ const productsSlice = createSlice({
   initialState,
   reducers: {
     setProductsSuccess: (state, action) => {
-      state.products = action.payload;
-      state.error = null;
+      state.products = action.payload
+      state.error = null
     },
     setProductsFailure: (state, action) => {
-      state.products = [];
-      state.error = action.payload;
+      state.products = []
+      state.error = action.payload
     },
   }
-});
+})
 
-export const { setProductsSuccess, setProductsFailure } = productsSlice.actions;
-export default productsSlice.reducer;
+export const { setProductsSuccess, setProductsFailure } = productsSlice.actions
+export default productsSlice.reducer

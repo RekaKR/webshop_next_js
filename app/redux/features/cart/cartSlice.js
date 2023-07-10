@@ -1,9 +1,9 @@
 'use client'
 
-import { createSlice } from "@reduxjs/toolkit"
+import { createSlice } from '@reduxjs/toolkit'
 
 const initialState = {
-  products: []
+  items: []
 }
 
 const cartSlice = createSlice({
@@ -11,7 +11,7 @@ const cartSlice = createSlice({
   initialState,
   reducers: {
     add: (state, action) => {
-      state.products.push(action.payload)
+      state.items.push(action.payload)
     }
   }
 })
