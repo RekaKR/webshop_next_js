@@ -1,23 +1,26 @@
 'use client'
 
-import { useState, useEffect } from "react"
+import { useEffect } from "react"
+import { useDispatch, useSelector } from "react-redux"
+import { getProducts } from "../redux/features/products/productActions"
+
 import Product from "@components/Product"
 
 const ProductsPage = () => {
-  const [products, setProducts] = useState()
+  const dispatch = useDispatch()
+  const products = useSelector(state => state.products.products)
+
+  console.log('products', products)
 
   useEffect(() => {
-    fetch('https://fakestoreapi.com/products')
-      .then(res => res.json())
-      .then(data => setProducts(data))
-      .catch(err => console.error('Hiba történt a bejegyzések lekérésekor:', err))
-  }, [])
+    dispatch(getProducts('https://fakestoreapi.com/products'))
+  }, [dispatch])
 
   return (
     <div>
       <h1>ProductsPage</h1>
       <div className="products">
-        {products && products.map(product => <Product key={product.id} product={product} />)}
+        {products && products.map(product => <Product key={product.id} product={product} isShow={false} />)}
       </div>
     </div>
   )

@@ -1,14 +1,17 @@
-import React from 'react'
+'use client'
 
+import { useState } from 'react'
 /*
-fejlécben elhelyezett kosár
 eltárolni benne a termékeket
-azoknak a darabszámát megjeleníteni
 */
 
 const Cart = () => {
+  const [cartItems, setCartItems] = useState([])
+
   return (
-    <div>Cart</div>
+    <div>
+      <p>Kosár: 10 {/*{cartItems.length()}*/} termék</p>
+    </div>
   )
 }
 

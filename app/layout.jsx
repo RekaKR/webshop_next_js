@@ -1,5 +1,5 @@
 import '@styles/css/style.css'
-
+import { ReduxProvider } from './redux/provider'
 import Navbar from '@components/Navbar'
 
 export const metadata = {
@@ -11,10 +11,12 @@ const RootLayout = ({ children }) => {
   return (
     <html lang='hun'>
       <body>
-        <main className='app'>
-          <Navbar />
-          {children}
-        </main>
+        <ReduxProvider>
+          <main className='app'>
+            <Navbar />
+            {children}
+          </main>
+        </ReduxProvider>
       </body>
     </html>
   )

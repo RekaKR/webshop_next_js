@@ -1,10 +1,15 @@
 nav {
   display: flex;
-  padding: 1.865rem 2vw;
-  margin-right: auto;
-  margin-left: auto;
-  align-items: center;
-  justify-content: space-between;
+
+  .container {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+
+    &>* {
+      margin-left: 100px;
+    }
+  }
 
   .logo {
     display: block;

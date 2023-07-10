@@ -1,10 +1,13 @@
 nav {
   display: flex;
-  padding: 1.865rem 2vw;
-  margin-right: auto;
-  margin-left: auto;
+}
+nav .container {
   align-items: center;
+  display: flex;
   justify-content: space-between;
+}
+nav .container > * {
+  margin-left: 100px;
 }
 nav .logo {
   display: block;
