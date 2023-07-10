@@ -1,4 +1,4 @@
-//styles here import '@styles/css'
+import '@styles/css/style.css'
 
 import Navbar from '@components/Navbar'
 
