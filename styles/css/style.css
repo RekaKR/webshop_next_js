@@ -1,0 +1,36 @@
+nav {
+  display: flex;
+  padding: 1.865rem 2vw;
+  margin-right: auto;
+  margin-left: auto;
+  align-items: center;
+  justify-content: space-between;
+}
+nav .logo {
+  display: block;
+  margin-right: 3em;
+  flex: none;
+}
+nav .logo image {
+  max-width: 120px;
+}
+
+.products {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+.products .product-list {
+  max-width: 200px;
+  margin: 20px 10px;
+  padding: 30px;
+  border: 1px black solid;
+}
+.products .product-list p {
+  font-size: 16px;
+}
+.products .product-list p#title {
+  font-size: 20px;
+}
+
+/*# sourceMappingURL=style.css.map */
